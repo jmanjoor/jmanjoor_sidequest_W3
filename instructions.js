@@ -18,20 +18,23 @@ function drawInstr() {
     160,
   );
 
-  const backBtn = { x: width / 2, y: 560, w: 220, h: 70 };
+  const backBtn = { x: width / 2, y: height / 2 + 180, w: 220, h: 70 };
   rectMode(CENTER);
   fill(isHover(backBtn) ? 200 : 220);
   rect(backBtn.x, backBtn.y, backBtn.w, backBtn.h, 12);
 
   fill(0);
   textSize(26);
+  textAlign(CENTER, CENTER);
+
   text("BACK", backBtn.x, backBtn.y);
 
   cursor(isHover(backBtn) ? HAND : ARROW);
 }
 
 function instrMousePressed() {
-  if (isHover({ x: 400, y: 560, w: 220, h: 70 })) currentScreen = "start";
+  const backBtn = { x: width / 2, y: height / 2 + 180, w: 220, h: 70 };
+  if (isHover(backBtn)) currentScreen = "start";
 }
 
 function instrKeyPressed() {
